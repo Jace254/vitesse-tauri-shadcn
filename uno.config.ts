@@ -8,6 +8,7 @@ import {
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
+import presetShadcn from './preset.shadcn'
 
 export default defineConfig({
   shortcuts: [
@@ -28,6 +29,7 @@ export default defineConfig({
         mono: 'DM Mono',
       },
     }),
+    presetShadcn(),
   ],
   transformers: [
     transformerDirectives(),

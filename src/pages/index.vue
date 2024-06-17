@@ -30,22 +30,27 @@ const { t } = useI18n()
 
     <div py-4 />
 
-    <TheInput
-      v-model="name"
-      :placeholder="t('intro.whats-your-name')"
-      autocomplete="false"
-      @keydown.enter="go"
-    />
+    <div flex items-center justify-center>
+      <Input
+        id="input"
+        v-model="name"
+        class="max-w-300px self-center"
+        :placeholder="t('intro.whats-your-name')"
+        autocomplete="false"
+        @keydown.enter="go"
+      />
+    </div>
+
     <label class="hidden" for="input">{{ t('intro.whats-your-name') }}</label>
 
     <div>
-      <button
+      <Button
         m-3 text-sm btn
         :disabled="!name"
         @click="go"
       >
         {{ t('button.go') }}
-      </button>
+      </Button>
     </div>
   </div>
 </template>

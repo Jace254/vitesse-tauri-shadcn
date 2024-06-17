@@ -3,24 +3,7 @@
 </p>
 
 <p align='center'>
-Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
-</p>
-
-<br>
-
-<p align='center'>
-<a href="https://vitesse.netlify.app/">Live Demo</a>
-</p>
-
-<br>
-
-> **Note**: This template is created during the early transition of Vue 3 and Vite. At this moment, if you are seeking for better Vue developer experience and more consistent maintenance, we recommend using [Nuxt 3](https://nuxt.com) instead (it also works perfectly with SPA or SSG as needed). This template still serves as a reference, but expect slower updates.
-
-<br>
-
-<p align='center'>
-<b>English</b> | <a href="https://github.com/antfu/vitesse/blob/main/README.zh-CN.md">简体中文</a>
-<!-- Contributors: Thanks for getting interested, however we DON'T accept new translations to the README, thanks. -->
+Mocking up web app with <b>Vitesse + Tauri + Shadcn</b><br>
 </p>
 
 <br>
@@ -64,6 +47,17 @@ Mocking up web app with <b>Vitesse</b><sup><em>(speed)</em></sup><br>
 - ⚙️ Unit Testing with [Vitest](https://github.com/vitest-dev/vitest), E2E Testing with [Cypress](https://cypress.io/) on [GitHub Actions](https://github.com/features/actions)
 
 - ☁️ Deploy on Netlify, zero-config
+
+### Extra
+
+- [Tauri](https://tauri.app/) - Build an optimized, secure, and frontend-independent application for multi-platform deployment.
+- [ShadcnVue](https://www.shadcn-vue.com/) - Build your component library.
+
+- To add shadcn-vue components to your project run:
+
+  ```sh
+  npx shadcn-vue@latest add [component-name]
+  ```
 
 <br>
 
@@ -148,14 +142,14 @@ As this template is strongly opinionated, the following provides a curated list 
 
 ### GitHub Template
 
-[Create a repo from this template on GitHub](https://github.com/antfu/vitesse/generate).
+[Create a repo from this template on GitHub](https://github.com/jace254/vitesse-tauri-shadcn/generate).
 
 ### Clone to local
 
 If you prefer to do it manually with the cleaner git history
 
 ```bash
-npx degit antfu/vitesse my-vitesse-app
+npx degit jace254/vitesse-tauri-shadcn my-vitesse-app
 cd my-vitesse-app
 pnpm i # If you don't have pnpm installed, run: npm install -g pnpm
 ```
@@ -170,6 +164,7 @@ When you use this template, try follow the checklist to update your info properl
 - [ ] Change the favicon in `public`
 - [ ] Remove the `.github` folder which contains the funding info
 - [ ] Clean up the READMEs and remove routes
+- [ ] Checkout and edit the `components.json`(config [here](https://www.shadcn-vue.com/docs/components-json.html)) and `preset.shadcn.ts`(possible color palletes [here](https://ui.shadcn.com/themes)).
 
 And, enjoy :)
 
@@ -183,6 +178,12 @@ Just run and visit http://localhost:3333
 pnpm dev
 ```
 
+To run tauri app in dev use
+
+```bash
+pnpm tauri:dev
+```
+
 ### Build
 
 To build the App, run
@@ -192,6 +193,14 @@ pnpm build
 ```
 
 And you will see the generated file in `dist` that ready to be served.
+
+To build tauri app use
+
+```bash
+pnpm tauri:build
+```
+
+And it will generate your platform's specific application from the project `src-tauri/target/release/`
 
 ### Deploy on Netlify
 
@@ -210,9 +219,3 @@ Run the image and specify port mapping with the `-p` flag.
 ```bash
 docker run --rm -it -p 8080:80 vitesse:latest
 ```
-
-## Why
-
-I have created several Vite apps recently. Setting the configs up is kinda the bottleneck for me to make the ideas simply come true within a very short time.
-
-So I made this starter template for myself to create apps more easily, along with some good practices that I have learned from making those apps. It's strongly opinionated, but feel free to tweak it or even maintain your own forks. [(see community maintained variation forks)](#variations)
